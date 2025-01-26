@@ -29,7 +29,8 @@ ALLOWED_HOSTS = ['https://gyan.center',
                 'https://gyan.center/hsp_web',
                 'gyan.center',
                 '127.0.0.1',
-                'http://localhost:8100']
+                'http://localhost:8100',
+                '54.157.230.65']
 
 
 # Application definition
