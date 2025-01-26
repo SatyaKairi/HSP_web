@@ -99,6 +99,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'hindu_seva_pratisthan.urls'
+SECURE_SSL_REDIRECT=False
 
 TEMPLATES = [
     {
