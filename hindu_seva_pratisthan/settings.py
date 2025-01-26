@@ -30,7 +30,8 @@ ALLOWED_HOSTS = ['https://gyan.center',
                 'gyan.center',
                 '127.0.0.1',
                 'http://localhost:8100',
-                '54.157.230.65']
+                '54.157.230.65',
+                'http://54.157.230.65:8000']
 
 
 # Application definition
@@ -59,13 +60,20 @@ REST_FRAMEWORK = {
     
 }
 
+CORS_ALLOWED_ORIGINS = [
+    'https://your-frontend-domain.com',  # Replace with your production front-end domain
+    'http://localhost:8100',  # For local development
+]
+
 
 CORS_ORIGIN_WHITELIST = ('http://localhost:5000',
                          'https://localhost',
                          'http://127.0.0.1:5500',
                          'http://localhost:8100',
                          'http://127.0.0.1:5500',
-                         'http://localhost:8100'
+                         'http://localhost:8100',
+                         'http://54.157.230.65:8000',
+                         '54.157.230.65:8000'
                          
                          )
 
