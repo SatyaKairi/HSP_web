@@ -25,7 +25,11 @@ SECRET_KEY = 'django-insecure-k@dgf6z5)t=bi$j&$a#j5d&oh9b$k5q_dh#2^uzotqauo9ctx_
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://gyan.center',
+                'https://gyan.center/hsp_web',
+                'gyan.center',
+                '127.0.0.1',
+                'http://localhost:8100']
 
 
 # Application definition
@@ -41,8 +45,11 @@ INSTALLED_APPS = [
     'rest_framework.authtoken', 
     'django.contrib.auth',
     'corsheaders',
+    'bootstrap4'
     
 ]
+
+AUTH_USER_MODEL = 'api.DhaanaDonationUsers'
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
@@ -53,10 +60,11 @@ REST_FRAMEWORK = {
 
 
 CORS_ORIGIN_WHITELIST = ('http://localhost:5000',
-                       
+                         'https://localhost',
                          'http://127.0.0.1:5500',
                          'http://localhost:8100',
                          'http://127.0.0.1:5500',
+                         'http://localhost:8100'
                          
                          )
 
@@ -86,7 +94,7 @@ ROOT_URLCONF = 'hindu_seva_pratisthan.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['templates/'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -110,6 +118,14 @@ DATABASES = {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.mysql',
+    #     'NAME': 'gyanopmm_hsp_web',
+    #     'USER': 'gyanopmm_hsp_web_user',
+    #     'PASSWORD': '-Zy=2JtskNK3',
+    #     'HOST': 'localhost',
+    #     'PORT': '3306',
+    # }
 }
 
 
@@ -148,8 +164,21 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
-
+STATIC_ROOT = '/home/gyanopmm/public_html/hsp_web/static'
+# STATIC_URL = 'public_html/hsp_web/'
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'dhanadonation@gmail.com'
+EMAIL_HOST_PASSWORD = 'buvlwdiolbbosxzn'
+
+
+import os
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
