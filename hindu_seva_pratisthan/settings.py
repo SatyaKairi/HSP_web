@@ -34,7 +34,8 @@ ALLOWED_HOSTS = ['https://gyan.center',
                 'http://54.157.230.65:8000',
                 'https://nelefoundation.com',
                 'http://nelefoundation.com',
-                'https://nelefoundation.com/hsp_web']
+                'https://nelefoundation.com/hsp_web',
+                '44.204.228.67']
 
 
 # Application definition
