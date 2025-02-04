@@ -31,7 +31,10 @@ ALLOWED_HOSTS = ['https://gyan.center',
                 '127.0.0.1',
                 'http://localhost:8100',
                 '54.157.230.65',
-                'http://54.157.230.65:8000']
+                'http://54.157.230.65:8000',
+                'https://nelefoundation.com',
+                'http://nelefoundation.com',
+                'https://nelefoundation.com/hsp_web']
 
 
 # Application definition
@@ -73,7 +76,7 @@ CORS_ORIGIN_WHITELIST = ('http://localhost:5000',
                          'http://127.0.0.1:5500',
                          'http://localhost:8100',
                          'http://54.157.230.65:8000',
-                         '54.157.230.65:8000'
+                         '54.157.230.65:8000',
                          
                          )
 
@@ -129,12 +132,12 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
     # 'default': {
-    #     'ENGINE': 'django.db.backends.mysql',
-    #     'NAME': 'gyanopmm_hsp_web',
-    #     'USER': 'gyanopmm_hsp_web_user',
-    #     'PASSWORD': '-Zy=2JtskNK3',
-    #     'HOST': 'localhost',
-    #     'PORT': '3306',
+    #     'ENGINE': 'django.db.backends.postgresql',
+    #     'NAME': 'hspwebrds',
+    #     'USER': 'postgres',
+    #     'PASSWORD': 'postgres2025*',
+    #     'HOST': 'hspwebrds.cdwuiuysy2iv.us-east-1.rds.amazonaws.com',
+    #     'PORT': '5432',
     # }
 }
 
